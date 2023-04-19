@@ -1,14 +1,23 @@
 import { Knex } from "knex";
 
-declare module 'knex/types/tables' {
+declare module "knex/types/tables" {
   export interface Tables {
-    transactions: {
+    users: {
       id: string;
-      title: string;
-      amount: number;
-      created_at: string;
-      session_id?: string;
+      name: string;
+      email: string;
+      password: string;
+      created_at: Date;
+      updated_at: Date;
+    };
+    meals: {
+      id: string;
+      name: string;
+      description: string;
+      user_id: string;
+      is_in_diet: boolean;
+      created_at: Date;
+      updated_at: Date;
     }
   }
-
 }
